@@ -7,18 +7,21 @@
 
 	let theButton = document.querySelector("#myButton"),
 		theHeading = document.querySelector('h1'),
-		svgImage = document.querySelector("#svgGraphic");
+		allSVGs = document.querySelectorAll(".svg");
 
 	// this function changes the heading text
 	function changeText() {
 	theHeading.textContent = "Hello there";
 }
 
-function logSVG() {
+function logoSVG() {
 	console.log(this.id);
 }
 
 theButton.addEventListener("click", changeText);
-svgImage.addEventListener("mouseover", logSVG);
+
+
+allSVGs.forEach(item => item.addEventListener('click', logoSVG));
+
 
 })();
